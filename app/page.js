@@ -116,7 +116,7 @@ export default function HomeParallax() {
             className="absolute bottom-0 left-0 w-1/2 max-w-[300px] z-10 blur-[2px]"
           >
             <Image
-              src="/zenchain/mountainright.png"
+              src="/zenchain-article/zenchain/mountainright.png"
               alt="Left Mountain"
               width={1000}
               height={1000}
@@ -130,7 +130,7 @@ export default function HomeParallax() {
             className="absolute bottom-0 right-0 w-1/2 max-w-[150px] z-10 blur-[2px]"
           >
             <Image
-              src="/zenchain/mountainleft.png"
+              src="/zenchain-article/zenchain/mountainleft.png"
               alt="Right Mountain"
               width={500}
               height={500}
@@ -144,7 +144,7 @@ export default function HomeParallax() {
             className="absolute top-[-4px] left-[-4px] w-1/3 max-w-[700px] z-20"
           >
             <Image
-              src="/zenchain/cayphai.png"
+              src="/zenchain-article/zenchain/cayphai.png"
               alt="Left Tree"
               width={300}
               height={300}
@@ -158,7 +158,7 @@ export default function HomeParallax() {
             className="absolute top-0 right-0 w-1/4 max-w-[500px] z-20"
           >
             <Image
-              src="/zenchain/caytrai.png"
+              src="/zenchain-article/zenchain/caytrai.png"
               alt="Right Tree"
               width={300}
               height={300}
@@ -172,7 +172,7 @@ export default function HomeParallax() {
             className="absolute bottom-[-10px] left-1/2 w-1/3 max-w-[500px] -translate-x-1/2 z-30"
           >
             <Image
-              src="/zenchain/logo1.png"
+              src="/zenchain-article/zenchain/logo1.png"
               alt="Torii Gate"
               width={500}
               height={500}
