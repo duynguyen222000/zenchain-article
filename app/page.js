@@ -103,7 +103,7 @@ export default function HomeParallax() {
           {/* Background nền */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/zenchain/bg.png"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/zenchain/bg.png`}
               alt="Background"
               fill
               className="object-cover w-full h-full"
