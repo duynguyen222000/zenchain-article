@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ZenChainArticle from '@/components/ArticleContest';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,26 +82,31 @@ export default function HomeParallax() {
       },
     });
 
-    tl.to(leftTreeRef.current, { x: -100,y:-100 }, 0)
+    tl.to(leftTreeRef.current, { x: -100, y: -100 }, 0)
       .to(logoRef.current, { y: 200, opacity: 0 }, 0)
       .to(leftMountainRef.current, { x: -200 }, 0)
       .to(rightMountainRef.current, { x: 50 }, 0)
       .to(rightTreeRef.current, { x: 60 }, 0)
-      .to(textRef.current, { scale:0 }, 0)
-      .to(text2Ref.current, { y:-100 }, 0);
+      .to(textRef.current, { scale: 0 }, 0)
+      .to(text2Ref.current, { y: -100 }, 0);
   }, [isLoaded]);
 
   return (
     <>
       {!isLoaded && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white">
-          <h2 className="text-2xl font-bold animate-pulse">Loading...</h2>
+          <h2 className="text-2xl text-black font-bold animate-pulse">Loading Zenchain Article...</h2>
         </div>
       )}
 
-      <div className='h-[2000px]'>
-        <div className="relative h-[700px] w-full max-w-[1400px] mx-auto bg-sky-100 overflow-hidden">
-          {/* Background nền */}
+      <div className=' w-full max-w-[1400px] mx-auto px-4'>
+        <div
+          className="fixed inset-0 -z-10 bg-no-repeat bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://zenbridge.zenchain.io/images/bg-dark.svg')",
+          }}
+        />
+        <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] w-full bg-sky-100 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src={`/zenchain-article/zenchain/bg.png`}
@@ -113,7 +119,8 @@ export default function HomeParallax() {
           {/* Núi trái dưới */}
           <div
             ref={leftMountainRef}
-            className="absolute bottom-0 left-0 w-1/2 max-w-[300px] z-10 blur-[2px]"
+            className="absolute bottom-0 left-0 w-1/2 max-w-[20%] z-10 blur-[2px] 
+               sm:max-w-[30%] md:max-w-[25%] lg:max-w-[20%]"
           >
             <Image
               src="/zenchain-article/zenchain/mountainright.png"
@@ -127,7 +134,8 @@ export default function HomeParallax() {
           {/* Núi phải dưới */}
           <div
             ref={rightMountainRef}
-            className="absolute bottom-0 right-0 w-1/2 max-w-[150px] z-10 blur-[2px]"
+            className="absolute bottom-0 right-0 w-1/2 max-w-[150px] z-10 blur-[2px]
+               sm:max-w-[200px] md:max-w-[180px] lg:max-w-[150px]"
           >
             <Image
               src="/zenchain-article/zenchain/mountainleft.png"
@@ -141,7 +149,8 @@ export default function HomeParallax() {
           {/* Cây trái trên */}
           <div
             ref={leftTreeRef}
-            className="absolute top-[-4px] left-[-4px] w-1/3 max-w-[700px] z-20"
+            className="absolute top-[-4px] left-[-4px] w-1/3 max-w-[700px] z-20
+               sm:max-w-[500px] md:max-w-[600px] lg:max-w-[700px]"
           >
             <Image
               src="/zenchain-article/zenchain/cayphai.png"
@@ -155,7 +164,8 @@ export default function HomeParallax() {
           {/* Cây phải trên */}
           <div
             ref={rightTreeRef}
-            className="absolute top-0 right-0 w-1/4 max-w-[500px] z-20"
+            className="absolute top-0 right-0 w-1/4 max-w-[500px] z-20
+               sm:max-w-[400px] md:max-w-[450px] lg:max-w-[500px]"
           >
             <Image
               src="/zenchain-article/zenchain/caytrai.png"
@@ -169,7 +179,8 @@ export default function HomeParallax() {
           {/* Logo cổng trời ở giữa */}
           <div
             ref={logoRef}
-            className="absolute bottom-[-10px] left-1/2 w-1/3 max-w-[500px] -translate-x-1/2 z-30"
+            className="absolute bottom-[-10px] left-1/2 w-1/3 max-w-[500px] -translate-x-1/2 z-30
+               sm:max-w-[500px] md:max-w-[450px] lg:max-w-[500px]"
           >
             <Image
               src="/zenchain-article/zenchain/logo1.png"
@@ -179,19 +190,33 @@ export default function HomeParallax() {
               className="w-full h-auto"
             />
           </div>
+
+          {/* Text Zenchain */}
           <div
             ref={textRef}
-            className="absolute top-1/4 left-1/2  -translate-x-1/2 tracking-[0.2em] z-30"
+            className="absolute top-1/4 left-1/2 -translate-x-1/2 z-30
+               text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] uppercase font-bold tracking-[0.2em]"
           >
-            <h1 className='uppercase text-[120px] font-bold '>Zenchain</h1>
+            Zenchain
           </div>
+
+          {/* Text Article contest */}
           <div
             ref={text2Ref}
-            className="absolute -bottom-[100px] left-1/2  -translate-x-1/2 tracking-[0.2em] z-30"
+            className="absolute -bottom-[100px] left-0 w-full text-center z-40
+               text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase font-bold"
           >
-            <h1 className='uppercase text-[60px] font-bold '>Article contest</h1>
+            Article contest
+          </div>
+
+          {/* Gradient mask */}
+          <div className="absolute bottom-0 left-0 w-full h-32 z-30 pointer-events-none">
+            <div className="w-full h-full bg-gradient-to-t from-[#0a0a0a] to-transparent" />
           </div>
         </div>
+
+        <ZenChainArticle />
+
       </div>
     </>
   );
