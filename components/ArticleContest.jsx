@@ -164,7 +164,7 @@ const ZenChainArticle = () => {
                     </li>
                 </ul>
 
-                <p className="mt-6 italic text-sm text-gray-600">
+                <p className="mt-6 italic text-sm text-gray-600 mb-10">
                     All content in this article is based on my personal research from official ZenChain documents. I’ve done my best to ensure accuracy, but suggestions and corrections from the community are always welcome. All images used in this article were created by me personally.
                 </p>
             </section>
